@@ -6,7 +6,7 @@ define('DB','u335246983_winos');
  
 $con = mysqli_connect(HOST,USER,PASS,DB);
  
-$sql = "select * from teacherDetails
+$sql = "select * from teacherDetails;
  
 $res = mysqli_query($con,$sql);
  
