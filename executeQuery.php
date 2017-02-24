@@ -20,7 +20,7 @@ array('id'=>$row[0],
 ));
 }
  
-echo json_encode(array("result"=>$result));
+echo json_encode(array($result));
  
 mysqli_close($con);
  
