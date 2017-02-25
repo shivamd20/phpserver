@@ -11,7 +11,7 @@
  //Defining Constants
  define('HOST','mysql.hostinger.in');
  define('USER','u335246983_winos');
- define('PASS',''bhaq2010'');
+ define('PASS','bhaq2010');
  define('DB','u335246983_winos');
  
  //Connecting to Database
