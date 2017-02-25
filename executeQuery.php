@@ -1,27 +1,19 @@
-<?php
-define('HOST','mysql.hostinger.in');
-define('USER','u335246983_winos');
-define('PASS','bhaq2010');
-define('DB','u335246983_winos');
+<?php 
+ if($_SERVER['REQUEST_METHOD']=='GET'){
  
-$con = mysqli_connect(HOST,USER,PASS,DB);
+ //Getting values
+ $sql = $_GET['query'];
  
-$sql = "select * from teacherDetails;
+ //Importing our db connection script
+ require_once('dbConnect.php');
  
-$res = mysqli_query($con,$sql);
+ //Executing query to database
+ if(mysqli_query($con,$sql)){
+ echo 'Query executed';
+ }else{
+ echo 'Query not executed';
+ }
  
-$result = array();
- 
-while($row = mysqli_fetch_array($res)){
-array_push($result,
-array('id'=>$row[0],
-'name'=>$row[1],
-'address'=>$row[2]
-));
-}
- 
-echo json_encode(array($result));
- 
-mysqli_close($con);
- 
-?>
+ //Closing the database 
+ mysqli_close($con);
+ }
