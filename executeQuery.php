@@ -11,7 +11,7 @@
  //Executing query to database
  if($r=mysqli_query($con,$sql)){
    while($row = mysqli_fetch_array($r, MYSQL_ASSOC)) {
-      	$abc['ex'][]=$row
+      	$abc['ex'][]=$row;
    }
 echo 'json_encode($abc)';
  echo 'Query executed';
