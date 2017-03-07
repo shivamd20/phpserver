@@ -5,15 +5,14 @@
  $dbname="u335246983_winos";
 
    
-   $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
+   $conn = mysqli_connect($dbhost, $dbuser, $dbpass,$dname);
    
    if(! $conn ) {
       die('Could not connect: ' . mysqli_error());
    }
    
    $sql = 'SELECT * FROM owner_details';
-   mysqli_select_db($dbname);
-   $retval = mysqli_query( $sql, $conn );
+    $retval = mysqli_query( $conn,$sql );
    
    if(! $retval ) {
       die('Could not get data: ' . mysqli_error());

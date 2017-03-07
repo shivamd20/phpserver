@@ -3,12 +3,16 @@
  
  //Getting values
  $sql = $_GET['query'];
- 
+
+  
  //Importing our db connection script
  require_once('dbConnect.php');
  
  //Executing query to database
  if(mysqli_query($con,$sql)){
+   while($row = mysqli_fetch_array($sql, MYSQL_ASSOC)) {
+      echo "{$row} ";
+   }
  echo 'Query executed';
  }else{
  echo 'Query not executed';
