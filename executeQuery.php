@@ -9,8 +9,8 @@
  require_once('dbConnect.php');
  
  //Executing query to database
- if(mysqli_query($con,$sql)){
-   while($row = mysqli_fetch_array($sql, MYSQL_ASSOC)) {
+ if($r=mysqli_query($con,$sql)){
+   while($row = mysqli_fetch_array($r, MYSQL_ASSOC)) {
       echo "{$row} ";
    }
  echo 'Query executed';
