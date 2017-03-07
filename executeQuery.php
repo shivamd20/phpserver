@@ -14,7 +14,6 @@
       	$abc['ex'][]=$row;
    }
 echo json_encode($abc);
- echo 'Query executed';
  }else{
  echo 'Query not executed';
  }
