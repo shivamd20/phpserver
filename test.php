@@ -5,25 +5,25 @@
  $dbname="u335246983_winos";
 
    
-   $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+   $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
    
    if(! $conn ) {
-      die('Could not connect: ' . mysql_error());
+      die('Could not connect: ' . mysqli_error());
    }
    
    $sql = 'SELECT * FROM owner_details';
-   mysql_select_db($dbname);
-   $retval = mysql_query( $sql, $conn );
+   mysqli_select_db($dbname);
+   $retval = mysqli_query( $sql, $conn );
    
    if(! $retval ) {
-      die('Could not get data: ' . mysql_error());
+      die('Could not get data: ' . mysqli_error());
    }
    
-   while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
+   while($row = mysqli_fetch_array($retval, MYSQL_ASSOC)) {
       echo "{$row} ";
    }
    
    echo "Fetched data successfully\n";
    
-   mysql_close($conn);
+   mysqli_close($conn);
 ?>
