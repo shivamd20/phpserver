@@ -13,7 +13,7 @@
    while($row = mysqli_fetch_array($r, MYSQL_ASSOC)) {
       	$abc['ex'][]=$row;
    }
-echo 'json_encode($abc)';
+echo json_encode($abc);
  echo 'Query executed';
  }else{
  echo 'Query not executed';
